@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <!-- Modern & Cute Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Audio Element (User can replace the source as needed) -->
+    <audio id="bg-music" loop>
+        <source src="assets/dooron_dooron.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="music-toggle" class="floating-btn hidden">🎵</button>
+
+    <!-- Start Overlay (Bypasses Browser Auto-Play Policy) -->
+    <div id="start-overlay" class="overlay refined-romantic">
+        <!-- Minimal backgrounds -->
+        <div class="minimal-particles">
+            <div class="p-heart">💖</div>
+            <div class="p-sparkle">✨</div>
+            <div class="p-heart">💕</div>
+            <div class="p-sparkle">✨</div>
+            <div class="p-heart">💖</div>
+        </div>
+
+        <div class="refined-content">
+            <div class="image-card float-anim">
+                <img src="assets/Front_Page.jpeg" alt="Romantic Teddy" class="card-img">
+            </div>
+
+            <h2 class="cursive refined-text">Ready for a surprise?</h2>
+
+            <button id="btn-start-overlay" class="refined-btn pulse-slow">Tap to Open <span class="beat-heart"
+                    style="margin-left: 6px;">💖</span></button>
+
+            <p class="poppins refined-subtext fade-delayed">I made something just for you 💖</p>
+        </div>
+    </div>
+
+    <!-- Main App Container -->
+    <main id="app-container" class="hidden">
+
+        <!-- SECTION 1: COUNTDOWN -->
+        <section id="sec1" class="active-section">
+            <!-- Background hearts & sparkles -->
+            <div class="hearts-bg">
+                <div class="heart">💖</div>
+                <div class="heart">✨</div>
+                <div class="heart">💕</div>
+                <div class="heart" style="left: 20%; animation-duration: 9s;">✨</div>
+                <div class="heart" style="left: 80%; animation-duration: 11s;">💖</div>
+            </div>
+
+            <div class="content countdown-content">
+                <h1 class="poppins glow-text fade-in-text" style="margin-bottom: 30px; font-weight: 500;">Countdown to
+                    your special day 💕</h1>
+
+                <!-- Circular animated ring -->
+                <div class="countdown-circle">
+                    <svg class="progress-ring" width="160" height="160">
+                        <circle class="progress-ring__circle" stroke="var(--primary-pink)" stroke-width="8"
+                            fill="transparent" r="72" cx="80" cy="80" />
+                    </svg>
+                    <div id="countdown" class="glow-num">10</div>
+                </div>
+            </div>
+
+            <!-- Waving teddy at bottom right -->
+            <img src="https://media.tenor.com/aKFaZBrZHY0AAAAi/bubu-dudu-sseeyall.gif" class="waving-teddy"
+                alt="Waving Teddy">
+        </section>
+
+        <!-- SECTION 2: LOADING MESSAGE -->
+        <section id="sec2" class="refined-romantic">
+            <div class="classy-loader-container">
+                <div class="classy-heart-pulse">❤️</div>
+                <h1 class="cursive elegant-loading-text">Loading your beautiful surprise...</h1>
+                <div class="elegant-progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: INTRO MESSAGE -->
+        <section id="sec3" class="refined-romantic">
+            <div class="minimal-particles">
+                <div class="p-heart">💖</div>
+                <div class="p-sparkle" style="left: 80%; animation-delay: 2s;">✨</div>
+                <div class="p-heart" style="left: 50%; font-size: 1.5rem; animation-delay: 1s;">💕</div>
+            </div>
+
+            <div class="content glass-panel-soft clean-card intro-content"
+                style="max-width: 95%; width: 380px; padding: 35px 25px;">
+                <div class="intro-image-container float-anim anim-img">
+                    <div class="glowing-circle" style="display: flex; justify-content: center; align-items: center;">
+                        <img src="assets/2ndPhoto.jpeg" alt="My Favourite Person" class="card-img"
+                            style="width: 175px; height: 175px; border-radius: 50%; object-fit: cover; object-position: center 15%;">
+                    </div>
+                </div>
+
+                <div class="poppins" style="text-align: center; margin: 25px 0 20px;">
+                    <div class="anim-t1 glow-text"
+                        style="color: var(--deep-pink); font-size: 1.5rem; font-weight: 600; margin-bottom: 5px;">My
+                        favourite person 💖</div>
+                    <div class="anim-t2" style="font-size: 1.2rem; opacity: 0.8; margin-bottom: 5px; color: #d6336c;">
+                        was born</div>
+                    <div class="anim-t3 glow-text"
+                        style="color: #ff4d79; font-size: 2.5rem; font-weight: 700; text-shadow: 0 2px 15px rgba(255, 77, 121, 0.4);">
+                        22 years ago ✨</div>
+                </div>
+
+                <p class="subtitle cursive"
+                    style="text-align: center; color: #e83e8c; margin-bottom: 30px; line-height: 1.6;">
+                    <span class="anim-sub1" style="font-size: 1.35rem; display: block; opacity: 0.9;">Yes, it's
+                        you...</span>
+                    <span class="anim-sub2" style="font-size: 1.1rem; display: block; opacity: 0.8; margin-top: 5px;">a
+                        little surprise awaits ✨</span>
+                </p>
+
+                <button id="btn-start-surprise" class="refined-btn pulse-slow block anim-btn"
+                    style="margin: 0 auto; width: 90%;">
+                    Start the Surprise 💕
+                </button>
+            </div>
+        </section>
+
+        <!-- SECTION 4: INTERACTIVE CAKE -->
+        <section id="sec4">
+            <div id="celebration-area">
+                <div id="cake-banner" class="cake-banner">Happy Birthday Tithi 💖</div>
+
+                <!-- Container for animated balloons -->
+                <div id="balloons-container"></div>
+
+                <div class="cake-container" id="cake-container">
+                    <div class="cake" id="cake">
+                        <!-- Cake Base & Layers -->
+                        <div class="plate"></div>
+                        <div class="layer layer-bottom"></div>
+                        <div class="layer layer-middle">
+                            <span class="cake-name">Tithi 💖</span>
+                        </div>
+                        <div class="layer layer-top"></div>
+                        <div class="icing"></div>
+                        <div class="drip drip1"></div>
+                        <div class="drip drip2"></div>
+                        <div class="drip drip3"></div>
+
+                        <!-- Candles -->
+                        <div class="candles" id="candles">
+                            <div class="candle candle-glow">
+                                <div class="flame hidden"></div>
+                            </div>
+                            <div class="candle candle-glow">
+                                <div class="flame hidden"></div>
+                            </div>
+                            <div class="candle candle-glow">
+                                <div class="flame hidden"></div>
+                            </div>
+                        </div>
+
+                        <!-- Subtle sparkles around cake -->
+                        <div class="cake-sparkle" style="top: 20px; left: -15px;">✨</div>
+                        <div class="cake-sparkle" style="top: 50px; right: -25px; animation-delay: 1s;">✨</div>
+                        <div class="cake-sparkle" style="top: -10px; right: 20px; animation-delay: 0.5s;">💖</div>
+                    </div>
+                </div>
+
+                <!-- Interaction Guidelines & Buttons -->
+                <div class="cake-controls" id="cake-controls">
+                    <button class="action-btn block" id="btn-decorate">Arrange Decoration 🎀</button>
+                    <button class="action-btn block hidden" id="btn-balloons">Fly the Balloons 🎈</button>
+                    <button class="action-btn block hidden" id="btn-candles">Light the Candles ✨</button>
+                    <h3 class="cursive hidden cut-text" id="cut-instruction">Draw a line to cut the cake 🎉</h3>
+                </div>
+
+                <!-- Visual trace line for swiping -->
+                <div id="swipe-trace" class="swipe-trace"></div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: TITLE PAGE -->
+        <section id="sec5" class="refined-romantic">
+            <div class="minimal-particles">
+                <div class="p-sparkle" style="left: 20%; animation-delay: 1s;">✨</div>
+                <div class="p-heart">💖</div>
+                <div class="p-sparkle" style="left: 70%; animation-delay: 2s;">✨</div>
+                <div class="p-heart" style="left: 85%; font-size: 1.2rem;">💕</div>
+            </div>
+
+            <div class="content glass-panel-soft clean-card title-page"
+                style="max-width: 95%; width: 420px; padding: 40px 25px;">
+
+                <div class="intro-image-container float-anim anim-img">
+                    <div class="glowing-circle" style="display: flex; justify-content: center; align-items: center;">
+                        <img src="assets/Front_Page.jpeg" alt="Happy Birthday" class="card-img"
+                            style="width: 175px; height: 175px; border-radius: 50%; object-fit: cover; object-position: center 20%;">
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin: 30px 0 20px;">
+                    <h1 class="cursive glow-text anim-t1"
+                        style="font-size: 2.8rem; color: #ff4d79; margin-bottom: 5px; line-height: 1.2; text-shadow: 0 2px 15px rgba(255, 77, 121, 0.4);">
+                        Happy Birthday 💖</h1>
+                    <h2 class="cursive glow-text anim-t2"
+                        style="font-size: 1.7rem; color: var(--deep-pink); opacity: 0.9;">to My Favourite Person ✨</h2>
+                </div>
+
+                <p class="poppins anim-t3"
+                    style="text-align: center; color: #d6336c; font-size: 1.15rem; margin-bottom: 35px; line-height: 1.6; font-weight: 500;">
+                    You make everything feel a little more special ✨
+                </p>
+
+                <button id="btn-next-title" class="refined-btn pulse-slow btn-anim block anim-sub1"
+                    style="margin: 0 auto; width: 90%;">
+                    See Your Surprise 💕
+                </button>
+            </div>
+        </section>
+
+        <!-- SECTION 6: PHOTO GALLERY -->
+        <section id="sec6" class="refined-romantic">
+            <div class="minimal-particles">
+                <div class="p-sparkle" style="left: 15%; animation-delay: 1.5s;">✨</div>
+                <div class="p-heart" style="left: 85%;">💖</div>
+                <div class="p-sparkle" style="left: 50%; opacity: 0.5;">✨</div>
+            </div>
+
+            <div class="gallery-container glass-panel-soft clean-card"
+                style="width: 95%; max-width: 450px; padding: 30px 20px;">
+                <div class="gallery-header" style="margin-bottom: 25px;">
+                    <h2 class="cursive glow-text"
+                        style="font-size: 2.2rem; color: #ff4d79; text-shadow: 0 2px 10px rgba(255, 77, 121, 0.4);">
+                        Little Things About You ✨</h2>
+                </div>
+
+                <!-- Interactive Carousel -->
+                <div class="carousel">
+                    <div class="carousel-track" id="carousel-track">
+                        <div class="carousel-card">
+                            <div class="img-wrapper"><img src="assets/Front_Page.jpeg" alt="Memory 1"></div>
+                            <div class="caption cursive">That smile… 😊</div>
+                        </div>
+                        <div class="carousel-card">
+                            <div class="img-wrapper"><img src="assets/2ndPhoto.jpeg" alt="Memory 2"></div>
+                            <div class="caption cursive">This is my favourite one 💖</div>
+                        </div>
+                        <div class="carousel-card">
+                            <div class="img-wrapper"><img src="assets/3rdPhoto.jpeg" alt="Memory 3"
+                                    style="object-fit: cover; object-position: center top;"></div>
+                            <div class="caption cursive">You look really beautiful here ✨</div>
+                        </div>
+                        <div class="carousel-card">
+                            <div class="img-wrapper"><img src="assets/4thPhoto.jpeg" alt="Memory 4"
+                                    style="object-fit: cover; object-position: center top;"></div>
+                            <div class="caption cursive">Just perfect ✨</div>
+                        </div>
+                    </div>
+                    <!-- Navigation Buttons -->
+                    <button class="carousel-btn prev" id="carousel-prev">❮</button>
+                    <button class="carousel-btn next" id="carousel-next">❯</button>
+                </div>
+                <p class="subtitle mt-4 mb-4 poppins" style="color: #e83e8c; font-size: 1.1rem; opacity: 0.9;">
+                    Some little moments that made you special to me ✨
+                </p>
+                <button id="btn-open-msg" class="refined-btn pulse-slow block" style="width: 90%; margin: 0 auto;">Open
+                    My Message 💌</button>
+            </div>
+        </section>
+
+        <!-- SECTION 7: FINAL MESSAGE -->
+        <section id="sec7" class="refined-romantic">
+            <div class="minimal-particles">
+                <div class="p-sparkle" style="left: 10%; animation-delay: 1.2s;">✨</div>
+                <div class="p-heart" style="left: 80%; animation-duration: 6s;">💖</div>
+                <div class="p-sparkle" style="left: 60%; opacity: 0.6; animation-delay: 2.5s;">✨</div>
+                <div class="p-heart" style="left: 30%; font-size: 1.2rem; animation-delay: 1.5s;">💕</div>
+            </div>
+
+            <div class="letter-container">
+                <div class="envelope-icon bounce-gentle">💌</div>
+                <div class="letter-content scrollable">
+                    <h2 class="cursive glow-text anim-text-title"
+                        style="font-size: 2.2rem; color: #ff4d79; margin-bottom: 25px; text-align: center; text-shadow: 0 2px 10px rgba(255, 77, 121, 0.3);">
+                        To Someone Very Special 💖
+                    </h2>
+
+                    <div class="poppins letter-body"
+                        style="color: #d6336c; font-size: 1.05rem; line-height: 1.8; text-align: left;">
+                        <p class="anim-text" style="font-weight: 600; font-size: 1.15rem; margin-bottom: 20px;">
+                            Happy 22st Birthday! ❤️
+                        </p>
+
+                        <p class="anim-text" style="margin-bottom: 20px;">
+                            Today is such a beautiful day, because it’s the day someone really special came into this
+                            world. And honestly, I feel lucky that somehow our paths crossed, even if it’s just through
+                            conversations.
+                        </p>
+
+                        <p class="anim-text" style="margin-bottom: 20px;">
+                            I may not have a lot of real memories with you, but the little moments we share—our chats,
+                            your messages, the way you talk—have quietly become something I look forward to every day.
+                            You have this way of making things feel lighter, happier… just better.
+                        </p>
+
+                        <p class="anim-text" style="margin-bottom: 20px;">
+                            There’s something about you—your smile, your nature, your vibe—that makes you stand out. And
+                            maybe I don’t say it often, but I genuinely admire you more than you probably realize.
+                        </p>
+
+                        <p class="anim-text" style="margin-bottom: 20px;">
+                            On your birthday, I just want you to be happy. Truly happy. I hope this year brings you
+                            everything you wish for and more. You deserve all the good things in the world.
+                        </p>
+
+                        <p class="anim-text"
+                            style="color: #ff4d79; font-weight: 500; font-style: italic; margin-bottom: 25px;">
+                            And I just want to say—<br>
+                            you’re a little more special to me than just someone I talk to 💫
+                        </p>
+
+                        <p class="anim-text">
+                            Keep smiling… because it really suits you 😊
+                        </p>
+
+                        <div class="anim-text" style="margin-top: 40px; text-align: right;">
+                            <p class="cursive" style="font-size: 1.3rem; color: #ff4d79;">
+                                —Someone who likes you<br>
+                                a little more than usual 💖
+                            </p>
+                            <button id="btn-to-reveal" class="refined-btn pulse-slow"
+                                style="margin-top: 20px; font-size: 0.9rem; padding: 10px 20px;">One more thing...
+                                ✨</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: FINAL ROMANTIC REVEAL -->
+        <section id="sec8" class="refined-romantic">
+            <div class="minimal-particles">
+                <div class="p-sparkle" style="left: 15%; animation-delay: 0.5s;">✨</div>
+                <div class="p-heart" style="left: 45%; animation-delay: 2.5s;">💖</div>
+                <div class="p-sparkle" style="left: 75%; animation-delay: 1.2s;">✨</div>
+            </div>
+
+            <div id="reveal-card" class="content glass-panel-soft clean-card reveal-card"
+                style="width: 90%; max-width: 500px; padding: 50px 30px;">
+                <div class="reveal-text-container poppins"
+                    style="text-align: center; color: #d6336c; font-size: 1.2rem; line-height: 2;">
+                    <p class="reveal-line line-1">Somewhere along the way, you became more than just someone I talk to…
+                    </p>
+                    <p class="reveal-line line-2">and maybe you already know that 💖</p>
+                    <p class="reveal-line line-3">I guess I’ve started liking you a little more than I planned…</p>
+                    <p class="reveal-line line-4"
+                        style="color: #ff4d79; font-weight: 600; text-shadow: 0 0 10px rgba(255, 77, 121, 0.3);">but
+                        today is your day… so I just wanted to make you smile 😊💫</p>
+                </div>
+
+                <button id="btn-final-calm" class="minimal-outline-btn anim-reveal-btn"
+                    style="margin-top: 40px; opacity: 0;">
+                    Take your time… 💭
+                </button>
+            </div>
+
+            <!-- Birthday Ending Card (hidden initially) -->
+            <div id="birthday-ending" class="content glass-panel-soft clean-card"
+                style="width: 90%; max-width: 460px; padding: 50px 30px; display: none; opacity: 0; text-align: center;">
+                <div style="font-size: 3rem; margin-bottom: 20px;">🎂</div>
+                <h2 class="cursive glow-text"
+                    style="font-size: 2.5rem; color: #ff4d79; margin-bottom: 15px; text-shadow: 0 0 15px rgba(255, 77, 121, 0.4);">
+                    Once again… Happy Birthday 💖
+                </h2>
+                <p class="poppins" style="color: #d6336c; font-size: 1.1rem; line-height: 1.8; opacity: 0.9;">
+                    I hope this little surprise made your day a bit more special 😊
+                </p>
+                <div style="margin-top: 30px; font-size: 1.5rem; letter-spacing: 0.5rem; opacity: 0.7;">✨ 💖 ✨</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Confetti JS for Cake Cut Event Celebration -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
